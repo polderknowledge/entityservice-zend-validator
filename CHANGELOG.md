@@ -4,10 +4,10 @@ All Notable changes to `entityservice-zend-validator` will be documented in this
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## NEXT - YYYY-MM-DD
+## 1.0.0 - 2016-12-03
 
 ### Added
-- Nothing
+- The first version of the library.
 
 ### Deprecated
 - Nothing
