@@ -19,7 +19,37 @@ $ composer require polderknowledge/entityservice-zend-validator
 
 ## Usage
 
-Please read the documentation for this package for a quick setup.
+After you have configured the EntityService you can use the validators without further config: 
+
+```php
+namespace MyApp\InputFilter;
+
+use PolderKnowledge\EntityService\Validator\EntityExists;
+use Zend\InputFilter\InputFilter;
+use PonyApp\Entity\Pony;
+
+class PonyEditInputFilter extends InputFilter
+{
+    /**
+     * Initializes the input filter.
+     */
+    public function init()
+    {
+        $this->add([
+            'name' => 'ponyId',
+            'validators' => [
+                [
+                    'name' => EntityExists::class, // or EntityNotExists
+                    'options' => [
+                        'entity' => Pony::class,
+                        'field' => 'name', // defaults to id 
+                    ],
+                ],
+            ],
+        ]);
+    }
+}
+```
 
 ## Change log
 
